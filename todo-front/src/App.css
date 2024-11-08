@@ -1,0 +1,309 @@
+/* Font */
+@font-face {
+  font-family: 'SUITE-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: 'SUITE-Regular';
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+/* Root container padding */
+#root {
+  padding: 15px;
+}
+
+/* Signup Wrapper */
+.signup-wrapper {
+  position: relative;
+}
+
+/* Signup Container */
+.signup-container {
+  width: 300px;
+  padding: 10px;
+  position: absolute;
+  background-color: white;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 0px;
+  right: 110%;
+  top:-150px;
+  font-weight: bold;
+  font-size: 20px;
+  z-index: 3;
+}
+
+/* Label and Input alignment */
+.signup-container > label {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.signup-container > label > input {
+  flex-basis: 65%;
+}
+
+
+
+/* Glow Effect for Inputs and Button */
+.glow-input, .glow-button {
+  width: 220px;
+  height: 10px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 0;
+}
+/* Error style for ID */
+.id-error {
+  color: red;
+  font-weight: bold;
+}
+.glow-input{
+  width:90%;
+}
+
+.glow-input:before, .glow-button:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 30s linear infinite;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-input:after, .glow-button:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* General glow-on-hover button */
+.glow-on-hover {
+  width: 220px;
+  height: 30px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  font-size: 20px;
+  right:350px;
+  top: -200px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* Glowing animation */
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* Full-width button for signup */
+.signup-container button {
+  width: 100%;
+}
+
+/* Todo Container */
+.todo-container {
+  padding: 20px;
+  width: 500px;
+}
+
+/* Todo Item styles */
+.todo-container li {
+  margin-bottom: 10px;
+}
+
+.todo-container li > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-container li > div > span:last-child {
+  display: flex;
+}
+
+.todo-container li > div button {
+  margin: 0 5px;
+}
+
+.todo-compleate {
+  text-decoration: line-through;
+}
+
+
+.resultMessage{
+  text-align: center;
+}
+
+
+/* Auth container styling (Signup and Login) */
+.auth-container {
+  width: 600px; /* 각 컴포넌트가 화면의 1/3을 차지하도록 */
+  padding: 20px;
+  background-color: white;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Login container table styling */
+.login-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.login-container th,
+.login-container td {
+  padding: 8px;
+  text-align: left;
+}
+
+.login-container th {
+  width: 20%;
+  font-weight: bold;
+}
+
+.login-container td {
+  width: 40%;
+}
+
+.login-container button {
+  margin-left: 10px;
+  height: 50px;
+}
+
+/* Glow Effect for Inputs and Button */
+.glow-input,
+.glow-button {
+  width: 90%;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.glow-input:before,
+.glow-button:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-input:after,
+.glow-button:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+
+.todo-list-container{
+  width: 600px; /* 각 컴포넌트가 화면의 1/3을 차지하도록 */
+  min-height: 20px;
+  padding: 20px;
+  background-color: white;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 20px;
+}
